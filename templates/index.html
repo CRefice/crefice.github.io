@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>{{ config.title }}</title>
+	<head>
+		<meta charset="utf-8" />
+		<title>{{ config.title }}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Carlo Refice's Home Page" />
-    <meta name="author" content="Carlo Refice" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Carlo Refice's Home Page" />
+		<meta name="author" content="Carlo Refice" />
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
 
-  <body class="centered">
-    {% include "header.html" %}
-    <main>
-      <div class="portrait">
-        <img alt="My Face" src="{{ resize_image(path="portrait.jpg", width=350,
-        height=350) }}" />
-      </div>
-      <h1>Carlo Refice</h1>
-      <section>
-        {{ section.content | safe }}
-      </section>
-    </main>
-    {% include "footer.html" %}
-  </body>
+	<body class="centered">
+		{% include "header.html" %}
+		<main>
+			<div class="portrait">
+				{% set image = resize_image(path="portrait.jpg", width=350, height=350) %}
+				<img alt="My Face" src="{{ image.url }}" />
+			</div>
+			<h1>Carlo Refice</h1>
+			<section>
+				{{ section.content | safe }}
+			</section>
+		</main>
+		{% include "footer.html" %}
+	</body>
 </html>
