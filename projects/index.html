@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Projects | Carlo Refice</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The projects I have been working on" />
+    <meta name="author" content="Carlo Refice" />
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+  </head>
+
+  <body class="centered">
+    <header>
+  <nav>
+    <ul class="main-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="https://github.com/CRefice/resume/releases/download/master/resume.pdf">Resume</a></li>
+      <li class="push"><a href="mailto:carlo@refice.dev">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+    <main>
+      <h1 class="section-title">Projects</h1>
+      <div class="cards">
+        <div class="card">
+  <img src="&#x2F;projects&#x2F;prayer.png" alt="A scene rendered with Prayer"  />
+  <div class="card-content">
+    <h2 id="prayer"><a href="https://github.com/CRefice/prayer">Prayer</a></h2>
+<p>A CPU path tracer written in Rust. It renders objects in a physically-based way using the Cook-Torrance microfacet model.</p>
+<p>Prayer is blazing fast:</p>
+<ul>
+<li>It uses Rust's exceptional multi-threading capabilities for concurrent rendering, taking full advantage of multi-core hardware.</li>
+<li>It stores meshes in a K-D Tree acceleration structure, making it cheap to render meshes with a high polygon count.</li>
+</ul>
+<p>Some other features include HDRI environment maps, a unified material representation, and an intuitive scene file format.</p>
+
+  </div>
+</div>
+<div class="card">
+  <img src="&#x2F;projects&#x2F;oxide.png" alt="An example program written in Oxide"  />
+  <div class="card-content">
+    <h2 id="oxide"><a href="https://github.com/CRefice/oxide">Oxide</a></h2>
+<p>A small, general-purpose imperative programming language written with simplicity in mind.
+Programs written in Oxide are compiled to run on a custom VM with minimal runtime overhead and memory footprint.</p>
+<p>One of my favorite features in modern scripting languages, first-class functions, is fully supported, allowing (and encouraging) functional-style code.</p>
+
+  </div>
+</div>
+<div class="card">
+  <img src="&#x2F;projects&#x2F;ssm.png" alt="An example program written in Oxide"  />
+  <div class="card-content">
+    <h2 id="ssm-speedy-simd-math"><a href="https://github.com/CRefice/ssm">SSM - Speedy SIMD Math</a></h2>
+<p>SSM is a C++ linear algebra library for use in 3D rendering applications.
+It includes types and functions to perform vector transformations in any number of dimensions, using matrices of any size.</p>
+<p>Originally written for learning purposes, SSM sports a similar API to <a href="https://glm.g-truc.net">GLM</a>, but with a few key differences:</p>
+<ul>
+<li>All vector and matrix types are generic over type and size, and their dimensionality is known at compile time. This makes it impossible to, for example, multiply together matrices of the wrong size.</li>
+<li>Wrapper types for unit vectors and quaternions allow you to express whether a vector is expected to be normalized at call sites through semantic typing, avoiding unnecessary normalizations and minimizing programmer error.</li>
+<li>Performance: all vector and matrix operations are heavily optimized using SIMD intrinsics, for maximum runtime performance.</li>
+</ul>
+
+  </div>
+</div>
+<div class="card">
+  <img src="&#x2F;projects&#x2F;damage.png" alt="A screenshot of Damage running The Legend of Zelda: Link&#x27;s Awakening."  />
+  <div class="card-content">
+    <h2 id="damage"><a href="https://github.com/CRefice/Damage">Damage</a></h2>
+<p>A GameBoy emulator for Windows. It's my first ever &quot;real&quot; programming project born out of my love of emulation, and as such contains some more advanced/unusual features such as full audio emulation, integer display scaling, and input remapping.</p>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+    <footer>© 2020 Carlo Refice</footer>
+
+  </body>
+</html>
