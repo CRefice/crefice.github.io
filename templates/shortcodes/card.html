@@ -1,6 +1,6 @@
 <div class="card">
   <img src="{{ image }}" {% if alt %}alt="{{ alt }}" {% endif %} />
-  <div class="card-content">
+  <section>
     {{ body | markdown | safe }}
-  </div>
+  </section>
 </div>

@@ -1,19 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>{{ page.title }}</title>
+{% extends "base.html" %}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ page.description }}" />
-    <meta name="author" content="Carlo Refice" />
+{% block content %}
+<header class="post-header">
+    <h1><a href={{page.permalink}}>{{page.title}}</a></h1>
+    <p class="subheader">
+    {{ page.date | date(format="%B %e, %Y") }} —
+    {{ page.reading_time }} min read
+    </p>
+    {% if page.description %}
+        <p>{{page.description}}</p>
+    {% endif %}
 
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-  </head>
+    {% if page.toc %}
+    <section class="toc">
+        <h1>Contents</h2>
+        <ul>
+            {% for h1 in page.toc %}
+            <li>
+                <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                {% if h1.children %}
+                <ul>
+                    {% for h2 in h1.children %}
+                    <li>
+                        <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+</header>
 
-  <body>
-    {% include "header.html" %}
-    <main>{{ page.content | safe }}</main>
-    {% include "footer.html" %}
-  </body>
-</html>
+{{ page.content | safe }}
+{% endblock content %}

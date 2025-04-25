@@ -1,23 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css");
 
 @import "card";
 
 $background-color: #fdfdfd;
 $text-color: #191919;
+$text-color-light: #7c7a7a;
 $accent-color: #f2545b;
 
-a {
-  color: $accent-color;
-  text-decoration: none;
+$separator-border: solid 1px #ddd;
 
-  &:hover {
-    text-decoration: underline;
-  }
+* {
+  box-sizing: border-box;
 }
 
 html,
 body {
   height: 100%;
+  margin: 0;
   line-height: 1.4;
   background: $background-color;
   color: $text-color;
@@ -25,52 +25,201 @@ body {
 }
 
 body {
-  margin: 0 10%;
-}
-
-.centered {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center;
 }
 
-.main-nav {
-  display: flex;
-  padding-left: 0%;
-
-  li {
-    padding: 10px;
-    display: inline;
-  }
+header, main, footer {
+  width: 100%;
+  max-width: 75ch;
+  margin: 0 auto;
 }
 
-.push {
-  margin-left: auto;
-}
-
-.portrait img {
-  width: 80%;
-  max-width: 350px;
-  border-radius: 50%;
-}
-
-.section-title {
+header {
+  margin: 0.5em auto;
 }
 
 main {
-  h1 {
-    margin: 1.5% 0;
-    font-size: 3em;
-    font-family: "Lato", sans-serif;
-  }
-  section {
-    margin: 0 5%;
-  }
+  padding: 0 1ch;
+  text-align: justify;
 }
 
 footer {
+  margin-top: 1em;
+  border-top: $separator-border;
+
   text-align: center;
-  height: 2em;
-  color: #7c7a7a;
+  line-height: 0.8;
+  color: $text-color-light;
+
+  p {
+    a > img {
+      height: 2.5em;
+    }
+  }
+  .copyright {
+    font-size: 0.8em;
+  }
+}
+
+p img {
+  width: 100%;
+  max-width: 512px;
+  margin: 2em auto;
+  display: block;
+}
+
+section {
+  max-width: 75ch;
+  margin: auto;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+nav > ul {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  li {
+    margin: 0 2ch;
+    display: inline;
+  }
+
+  .site-logo {
+    font-family: "Hack";
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: auto;
+  }
+}
+
+.portrait {
+  padding-bottom: 2em;
+  text-align: center;
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 350px;
+    border-radius: 50%;
+  }
+}
+
+p > svg {
+  vertical-align: text-top;
+  height: 1em;
+}
+
+header.post-header {
+  h1 {
+    margin-bottom: 0.2em;
+  }
+  p.subheader {
+    margin-top: 0;
+    color: $text-color-light;
+  }
+  margin-bottom: 1.5em;
+  border-bottom: $separator-border;
+}
+
+article {
+  padding: 1em 0;
+  & + article {
+    border-top: $separator-border;
+  }
+
+  h2 {
+    margin-bottom: 0.5em;
+  }
+}
+
+figure {
+  width: 100%;
+  margin: 0  auto;
+  svg {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Code syntax highlighting */
+
+code {
+  font-size: 1rem;
+}
+
+pre {
+  padding: 1rem;
+  border-radius: 5px;
+  overflow: auto;
+  line-height: 1.5;
+}
+
+/* The line numbers already provide some kind of left/right padding */
+pre[data-linenos] {
+  padding: 1rem 0;
+}
+pre table td {
+  padding: 0;
+}
+/* The line number cells */
+pre table td:nth-of-type(1) {
+  text-align: center;
+  vertical-align: top;
+  user-select: none;
+}
+pre mark {
+  /* If you want your highlights to take the full width */
+  display: block;
+  /* The default background colour of a mark is bright yellow */
+  background-color: rgba(254, 252, 232, 0.9);
+}
+pre table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Tables */
+
+table {
+  text-align: left;
+  table-layout: auto;
+  border-spacing: 0;
+
+  width: 100%;
+}
+
+.table-wrapper {
+  overflow-x: scroll;
+  margin: 2em auto;
+}
+
+td, th {
+  padding: 0.3em 0.9em;
+}
+
+table td {
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+thead > tr > th {
+  border-top: solid 2px gray;
+  border-bottom: solid 2px gray;
+}
+
+tbody > tr {
+}
+
+tbody > tr:nth-of-type(odd) {
+  background-color: rgb(220, 225, 250);
 }

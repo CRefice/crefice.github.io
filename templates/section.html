@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ section.content | safe }}
+{% for page in section.pages %}
+<article>
+    <header class="post-header">
+        <h1><a href={{page.permalink}}>{{page.title}}</a></h1>
+        <p class="subheader">
+        {{ page.date | date(format="%B %e, %Y") }} —
+        {{ page.reading_time }} min read
+        </p>
+        {% if page.description %}
+        <p>{{page.description}}</p>
+        {% endif %}
+    </header>
+
+	<section>
+		{{ page.summary | safe }}
+	</section>
+	<p><a href="{{ page.permalink }}#continue-reading">Read More...</a></p>
+</article>
+{% endfor %}
+
+{% endblock content %}

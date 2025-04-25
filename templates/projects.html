@@ -11,13 +11,10 @@
     <link rel="stylesheet" type="text/css" href="/style.css" />
   </head>
 
-  <body class="centered">
+  <body>
     {% include "header.html" %}
     <main>
-      <h1 class="section-title">Projects</h1>
-      <div class="cards">
-        {{ page.content | safe }}
-      </div>
+		{{ page.content | safe }}
     </main>
     {% include "footer.html" %}
   </body>

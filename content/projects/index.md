@@ -5,6 +5,8 @@ description = "The projects I have been working on"
 template = "projects.html"
 +++
 
+# Personal Projects
+
 {% card(image="/projects/prayer.png", alt="A scene rendered with Prayer") %}
 
 ## [Prayer](https://github.com/CRefice/prayer)
