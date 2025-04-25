@@ -2,6 +2,8 @@ title = "refice.dev"
 
 author = "Carlo Refice"
 
+description = "Carlo Refice's personal website"
+
 # The URL the site will be built for
 base_url = "https://www.refice.dev"
 

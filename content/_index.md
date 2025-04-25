@@ -1,5 +1,6 @@
 +++
 title = "Home"
+description = "About me"
 +++
 
 Hi! I'm **Carlo**. I like programming and pretty much anything that has to do with computers. At my day job I work on [compilers](https://www.graalvm.org/).
