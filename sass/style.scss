@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css");
 
-@import "card";
-
 $background-color: #fdfdfd;
 $text-color: #191919;
 $text-color-light: #7c7a7a;
@@ -221,5 +219,5 @@ tbody > tr {
 }
 
 tbody > tr:nth-of-type(odd) {
-  background-color: rgb(220, 225, 250);
+  background-color: #eff1f5;
 }
