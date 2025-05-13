@@ -1,3 +1,5 @@
+@use "reset";
+
 @import url("https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css");
 
@@ -8,21 +10,15 @@ $accent-color: #f2545b;
 
 $separator-border: solid 1px #ddd;
 
-* {
-  box-sizing: border-box;
+html, body {
+  height: 100%;
 }
 
-html,
 body {
-  height: 100%;
-  margin: 0;
-  line-height: 1.4;
   background: $background-color;
   color: $text-color;
   font-family: "Open Sans", sans-serif;
-}
 
-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -34,13 +30,20 @@ header, main, footer {
   margin: 0 auto;
 }
 
+h1, h2, p {
+  margin: 1em 0;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
 header {
   margin: 0.5em auto;
 }
 
 main {
   padding: 0 1ch;
-  text-align: justify;
 }
 
 footer {
